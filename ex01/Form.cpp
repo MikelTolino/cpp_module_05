@@ -6,14 +6,13 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:57 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 21:07:34 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:46:04 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeToSigned, int GradeToExecute) :
-_name(name), _signed(false), _gradeToExecute(GradeToExecute), _gradeToSigned(gradeToSigned)
+Form::Form(std::string name, int gradeToSigned, int GradeToExecute) : _name(name), _signed(false), _gradeToExecute(GradeToExecute), _gradeToSigned(gradeToSigned)
 {
 	return;
 }
@@ -25,13 +24,18 @@ Form::~Form()
 
 void Form::beSigned(Bureaucrat &b)
 {
-	if (b.getGrade() >= this->_gradeToSigned)
+	try
 	{
-		this->_signed = true;
+		if (b.getGrade() <= this->_gradeToSigned)
+			this->_signed = true;
+		else
+			throw Form::GradeTooLowException();
 	}
-	else
-		throw Form::GradeTooLowException();
-	b.signForm(*this);
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << '\n';
+	}
+		b.signForm(*this);
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &form)
@@ -44,4 +48,24 @@ std::ostream &operator<<(std::ostream &os, const Form &form)
 	os << "Needs a grade to be signed: " << form.getGradeToSign() << "\n";
 	os << "And needs a grade to be executed: " << form.getGradeToExecute() << "\n";
 	return os;
+}
+
+int Form::getGradeToExecute(void) const
+{
+	return this->_gradeToExecute;
+}
+
+std::string Form::getName(void) const
+{
+	return this->_name;
+}
+
+int Form::getGradeToSign(void) const
+{
+	return this->_gradeToSigned;
+}
+
+bool Form::isSigned(void) const
+{
+	return this->_signed;
 }

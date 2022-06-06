@@ -6,12 +6,11 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 21:06:33 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:46:28 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
@@ -101,7 +100,9 @@ bool Bureaucrat::signForm(Form & f)
 		return true;
 	}
 	else
-		std::cout << this->getGrade() << " cannot sign " << f.getName()
-		<< " because has no grade";
+	{
+		std::cout << this->getName() << " cannot sign " << f.getName()
+		<< " because has no grade\n";
+	}
 	return false;
 }

@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 23:46:28 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:57:49 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ bool Bureaucrat::signForm(Form & f)
 {
 	if (f.isSigned())
 	{
-		std::cout << this->_name << " signs " << f.getName();
+		std::cout << this->_name << " signs " << f.getName() << std::endl;
 		return true;
 	}
 	else

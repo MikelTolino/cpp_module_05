@@ -6,10 +6,9 @@
 #    By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 20:49:39 by mmateo-t          #+#    #+#              #
-#    Updated: 2022/05/31 20:50:52 by mmateo-t         ###   ########.fr        #
+#    Updated: 2022/06/06 20:29:17 by mmateo-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CFLAGS:= -Wall -Werror -Wextra
 CPPSTD:= -std=c++98

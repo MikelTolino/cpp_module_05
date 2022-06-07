@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:54 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 13:51:03 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:19:57 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 
 class Bureaucrat;
 
@@ -31,13 +28,16 @@ private:
 
 public:
 	Form(std::string const name, int const gradeToSigned, int const GradeToExecute);
-	~Form();
+	Form( void );
+	Form(Form &);
+	~Form( void );
+	Form & operator=(Form &);
 	std::string getName(void) const;
 	bool isSigned(void) const;
 	int getGradeToExecute(void) const;
 	int getGradeToSign(void) const;
 	void beSigned(Bureaucrat &);
-	void execute(Bureaucrat const & executor) const;
+	virtual void execute( const Bureaucrat & executor) = 0;
 	struct GradeTooLowException : public std::exception
 	{
 		const char *what() const throw()

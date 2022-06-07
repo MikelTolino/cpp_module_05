@@ -6,20 +6,28 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:22 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 14:17:15 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:16:23 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIAL_PARDON_FORM_HPP
 #define PRESIDENTIAL_PARDON_FORM_HPP
 #include "Form.hpp"
+#define SIGN 25
+#define EXEC 5
 
 class PresidentialPardonForm : public Form
 {
+private:
+	std::string _target;
 
 public:
-	PresidentialPardonForm(const Form &);
-	~PresidentialPardonForm();
+	PresidentialPardonForm(const std::string &);
+	PresidentialPardonForm( void );
+	PresidentialPardonForm(PresidentialPardonForm const &);
+	PresidentialPardonForm & operator=(PresidentialPardonForm const & );
+	~PresidentialPardonForm( void );
+	void execute( const Bureaucrat & executor);
 };
 
 #endif

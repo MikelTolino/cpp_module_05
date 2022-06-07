@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:35 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 14:17:27 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:48:19 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ std::string const tree = "                      		\n"
 
 class ShrubberyCreationForm : public Form
 {
+private:
+	std::string _target;
 
 public:
-	ShrubberyCreationForm(const Form &);
-	~ShrubberyCreationForm();
+	ShrubberyCreationForm(const std::string &);
+	ShrubberyCreationForm( void );
+	ShrubberyCreationForm(ShrubberyCreationForm const &);
+	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & );
+	~ShrubberyCreationForm( void );
+	void execute( const Bureaucrat & executor);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 20:54:52 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:14:14 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,22 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat &b)
 	return (*this);
 }
 
-Bureaucrat::Bureaucrat( void ) : _name(""), _grade(MAX)
+Bureaucrat::Bureaucrat( void ) : _name("Nameless"), _grade(MAX)
 {
 	return;
+}
+
+bool Bureaucrat::signForm(Form & f)
+{
+	if (f.isSigned())
+	{
+		std::cout << this->_name << " signs " << f.getName() << std::endl;
+		return true;
+	}
+	else
+	{
+		std::cout << this->getName() << " cannot sign " << f.getName()
+		<< " because has no grade\n";
+	}
+	return false;
 }

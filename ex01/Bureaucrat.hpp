@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:06 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 23:53:27 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:08:01 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
-
-class Form;
 
 class Bureaucrat
 {
@@ -30,22 +27,27 @@ private:
 
 public:
 	Bureaucrat(std::string, int);
+	Bureaucrat(Bureaucrat &);
 	~Bureaucrat();
+	Bureaucrat();
+	Bureaucrat & operator=(Bureaucrat &);
 	std::string getName() const;
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
 	bool signForm(Form & f);
-	struct GradeTooLowException : public std::exception
+	class GradeTooLowException : public std::exception
 	{
+		public:
 		const char *what() const throw()
 		{
 			return "Grade is too low";
 		}
 	};
 
-	struct GradeTooHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
+		public:
 		const char *what() const throw()
 		{
 			return "Grade is too high";

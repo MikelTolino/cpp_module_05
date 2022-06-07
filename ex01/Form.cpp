@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:57 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 23:54:22 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:07:17 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,20 @@ int Form::getGradeToSign(void) const
 bool Form::isSigned(void) const
 {
 	return this->_signed;
+}
+
+Form::Form( void ) : _name("Nameless"), _signed(false), _gradeToExecute(150), _gradeToSigned(150)
+{
+	return;
+}
+
+Form::Form(Form const &form)
+{
+	*this = form;
+}
+
+Form & Form::operator=(Form const &form)
+{
+	this->_signed = form._signed;
+	return (*this);
 }

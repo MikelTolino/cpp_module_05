@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:57 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 21:07:17 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:19:21 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ Form::Form( void ) : _name("Nameless"), _signed(false), _gradeToExecute(150), _g
 	return;
 }
 
-Form::Form(Form const &form)
+Form::Form(Form &form) : _name("Nameless"), _gradeToExecute(MAX), _gradeToSigned(MAX)
 {
 	*this = form;
 }
 
-Form & Form::operator=(Form const &form)
+Form & Form::operator=(Form &form)
 {
 	this->_signed = form._signed;
 	return (*this);

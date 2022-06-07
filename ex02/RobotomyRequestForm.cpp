@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:25 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:33:59 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:37:42 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &form)
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(void) : Form("RobotomyRequestForm", 72, 45), _target("")
+RobotomyRequestForm::RobotomyRequestForm(void) :
+Form("RobotomyRequestForm", 72, 45), _target("")
 {
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) :
+Form("RobotomyRequestForm", 72, 45), _target(target)
 {
 	return;
 }

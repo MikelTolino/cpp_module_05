@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:22 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:16:23 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:01:08 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	std::string _target;
 
 public:
-	PresidentialPardonForm(const std::string &);
+	PresidentialPardonForm(const std::string );
 	PresidentialPardonForm( void );
 	PresidentialPardonForm(PresidentialPardonForm const &);
 	PresidentialPardonForm & operator=(PresidentialPardonForm const & );

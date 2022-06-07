@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:18 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:35:36 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:01:04 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &for
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(void) : Form("PresidentialPardonForm", SIGN, EXEC), _target("")
+PresidentialPardonForm::PresidentialPardonForm(void) :
+Form("PresidentialPardonForm", SIGN, EXEC), _target("")
 {
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form("PresidentialPardonForm", SIGN, EXEC), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string const target) :
+Form("PresidentialPardonForm", SIGN, EXEC), _target(target)
 {
 	return;
 }
@@ -45,7 +47,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &b)
 			throw Form::GradeTooLowException();
 		}
 	}
-	catch (Form::GradeTooHighException &e)
+	catch (Form::GradeTooLowException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}

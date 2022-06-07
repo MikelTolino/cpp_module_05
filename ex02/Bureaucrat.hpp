@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:06 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 21:15:51 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:54:22 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ public:
 	void incrementGrade();
 	void decrementGrade();
 	bool signForm(Form & f);
+	void executeForm(Form const & form);
 	class GradeTooLowException : public std::exception
 	{
 		public:

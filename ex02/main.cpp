@@ -6,12 +6,14 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:08 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 13:37:53 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:25:16 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -21,11 +23,11 @@ int main(int argc, char const *argv[])
 	std::cout << b1 << std::endl;
 	std::cout << b2 << std::endl;
 
-	Form f1("Documento oficial del estado", 5, 3);
-	Form f2("Documento Espacial", 130, 120);
+	ShrubberyCreationForm f1("home");
+	//PresidentialPardonForm f2("Documento de perdon presidencial");
+	//RobotomyRequestForm f3();
 
 	f1.beSigned(b1);
-	f2.beSigned(b2);
 
 	f1.execute(b2);
 

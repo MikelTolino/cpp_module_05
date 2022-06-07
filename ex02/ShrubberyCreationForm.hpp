@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:35 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 13:36:10 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:17:27 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "Form.hpp"
 #include <iostream>
 #include <fstream>
-
-class Form;
-
 
 std::string const tree = "                      		\n"
 "                                  # #### #### \n"
@@ -36,7 +33,7 @@ std::string const tree = "                      		\n"
 "                                      `} \n"
 "                                       {\n";
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public Form
 {
 
 public:

@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:57 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 13:38:53 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:16:53 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,5 @@ bool Form::isSigned(void) const
 
 void Form::execute(Bureaucrat const &executor) const
 {
-	try
-	{
-		if (this->_signed)
-		{
-			ShrubberyCreationForm(*this);
-		}
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+
 }

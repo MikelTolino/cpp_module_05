@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 20:25:36 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:54:52 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,20 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade();
 	return os;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat &b)
+{
+	*this = b;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat &b)
+{
+	this->_grade = b._grade;
+	return (*this);
+}
+
+Bureaucrat::Bureaucrat( void ) : _name(""), _grade(MAX)
+{
+	return;
 }

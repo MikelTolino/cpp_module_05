@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/06 23:57:49 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:54:52 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,17 +92,18 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 	return os;
 }
 
-bool Bureaucrat::signForm(Form & f)
+Bureaucrat::Bureaucrat(Bureaucrat &b)
 {
-	if (f.isSigned())
-	{
-		std::cout << this->_name << " signs " << f.getName() << std::endl;
-		return true;
-	}
-	else
-	{
-		std::cout << this->getName() << " cannot sign " << f.getName()
-		<< " because has no grade\n";
-	}
-	return false;
+	*this = b;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat &b)
+{
+	this->_grade = b._grade;
+	return (*this);
+}
+
+Bureaucrat::Bureaucrat( void ) : _name(""), _grade(MAX)
+{
+	return;
 }

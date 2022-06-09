@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:08 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 15:32:41 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:39:27 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,23 @@ int main(int argc, char const *argv[])
 
 	b1.signForm(f1);
 	b2.executeForm(f1);
+	b1.executeForm(f1);
 
-	b2.executeForm(f1);
+	std::cout << "\n-----------------------\n";
+
+	b2.signForm(f2);
+	b2.executeForm(f2);
+
+	std::cout << "\n-----------------------\n";
+
+	b1.signForm(f2);
+	b1.executeForm(f2);
+
+	std::cout << "\n-----------------------\n";
+
+	b1.executeForm(f3);
+	b1.signForm(f3);
+	b1.executeForm(f3);
+
 	return 0;
 }

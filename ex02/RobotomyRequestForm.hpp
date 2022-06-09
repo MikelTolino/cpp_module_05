@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:28 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:59:35 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:58:21 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	RobotomyRequestForm(RobotomyRequestForm const &);
 	RobotomyRequestForm & operator=(RobotomyRequestForm const & );
 	~RobotomyRequestForm( void );
-	void execute( const Bureaucrat & executor);
+	void execute( const Bureaucrat & executor) const;
 };
 
 #endif

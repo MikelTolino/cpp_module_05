@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:25 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:37:42 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:59:23 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	return;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &b)
+void RobotomyRequestForm::execute(Bureaucrat const &b) const
 {
 	try
 	{

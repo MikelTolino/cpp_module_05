@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:35 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:59:25 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:58:25 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 	ShrubberyCreationForm(ShrubberyCreationForm const &);
 	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & );
 	~ShrubberyCreationForm( void );
-	void execute( const Bureaucrat & executor);
+	void execute( const Bureaucrat & executor) const;
 };
 
 #endif

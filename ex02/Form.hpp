@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:54 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 22:59:47 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:57:32 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,39 @@ private:
 
 public:
 	Form(std::string const name, int const gradeToSigned, int const GradeToExecute);
-	Form( void );
+	Form(void);
 	Form(Form &);
-	~Form( void );
-	Form & operator=(Form &);
+	~Form(void);
+	Form &operator=(Form &);
 	std::string getName(void) const;
 	bool isSigned(void) const;
 	int getGradeToExecute(void) const;
 	int getGradeToSign(void) const;
 	void beSigned(Bureaucrat &);
-	virtual void execute( const Bureaucrat & executor) = 0;
-	struct GradeTooLowException : public std::exception
+	virtual void execute(const Bureaucrat &executor) const = 0;
+	class GradeTooLowException : public std::exception
 	{
+	public:
 		const char *what() const throw()
 		{
 			return "Grade is too low";
 		}
 	};
 
-	struct GradeTooHighException : public std::exception
+	class GradeTooHighException : public std::exception
 	{
+	public:
 		const char *what() const throw()
 		{
 			return "Grade is too high";
+		}
+	};
+	class FormIsNotSigned : public std::exception
+	{
+	public:
+		const char *what() const throw()
+		{
+			return "Form is not signed";
 		}
 	};
 };

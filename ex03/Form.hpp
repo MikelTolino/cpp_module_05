@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:54 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 15:30:32 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 18:57:38 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	Form(std::string const name, int const gradeToSigned, int const GradeToExecute);
 	Form(void);
 	Form(Form &);
-	~Form(void);
+	virtual ~Form(void);
 	Form &operator=(Form &);
 	std::string getName(void) const;
 	bool isSigned(void) const;

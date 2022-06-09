@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:54 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 13:57:32 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:30:32 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
 	int getGradeToExecute(void) const;
 	int getGradeToSign(void) const;
 	void beSigned(Bureaucrat &);
-	virtual void execute(const Bureaucrat &executor) const = 0;
+	virtual bool execute(const Bureaucrat &executor) const = 0;
 	class GradeTooLowException : public std::exception
 	{
 	public:

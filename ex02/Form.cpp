@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:30:57 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/07 21:19:21 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:24:41 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void Form::beSigned(Bureaucrat &b)
 	{
 		std::cout << e.what() << '\n';
 	}
-	b.signForm(*this);
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &form)

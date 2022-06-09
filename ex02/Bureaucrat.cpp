@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:04 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 13:54:40 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:30:43 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,10 @@ Bureaucrat::Bureaucrat( void ) : _name("Nameless"), _grade(MAX)
 
 bool Bureaucrat::signForm(Form & f)
 {
-	if (f.isSigned())
+	if (this->_grade <= f.getGradeToSign())
 	{
 		std::cout << this->_name << " signs " << f.getName() << std::endl;
+		f.beSigned(*this);
 		return true;
 	}
 	else
@@ -127,12 +128,17 @@ void Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{
-		form.execute(*this);
-		std::cout << this->_name << " executes form " << form.getName() << std::endl;
+		if (!form.isSigned())
+		{
+			throw Form::FormIsNotSigned();
+			return;
+		}
+		if (form.execute(*this))
+			std::cout << this->_name << " executes form " << form.getName() << std::endl;
 	}
-	catch(std::exception& e)
+	catch(Form::FormIsNotSigned &e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 	return;
 }

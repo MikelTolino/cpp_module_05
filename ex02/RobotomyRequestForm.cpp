@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:25 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 13:59:23 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:31:42 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	return;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &b) const
+bool RobotomyRequestForm::execute(Bureaucrat const &b) const
 {
 	try
 	{
-		if (b.getGrade() <= this->getGradeToExecute() && this->isSigned())
+		if (b.getGrade() <= this->getGradeToExecute())
 		{
 			for (size_t i = 0; i < NUM; i++)
 			{
@@ -49,6 +49,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &b) const
 				usleep(100000);
 			}
 			std::cout << this->_target << " has been robotomized successfully 50% of the time\n";
+			return true;
 		}
 		else
 			std::cout << "Failure\n";
@@ -57,6 +58,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &b) const
 	{
 		std::cout << e.what() << std::endl;
 	}
+	return false;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &form)

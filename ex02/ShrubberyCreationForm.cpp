@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:31 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 13:59:29 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:31:25 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,23 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("
 	return;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &b) const
+bool ShrubberyCreationForm::execute(Bureaucrat const &b) const
 {
 	std::ofstream file;
 	std::string filename = this->_target + "_shrubbery";
 
 	try
 	{
-		if (b.getGrade() <= this->getGradeToExecute() && this->isSigned())
+		if (b.getGrade() <= this->getGradeToExecute())
 		{
 			file.open(filename);
 			file << tree;
 			file.close();
+			return true;
 		}
 		else
 		{
-			std::cout << "You have no grade to create Shruberry Form\n";
+			std::cout << "You have no grade to execute Shruberry Form\n";
 			throw Form::GradeTooLowException();
 		}
 	}
@@ -55,6 +56,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &b) const
 	{
 		std::cout << e.what() << '\n';
 	}
+	return false;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &form)

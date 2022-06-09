@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:05:22 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 13:58:49 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:30:32 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	PresidentialPardonForm(PresidentialPardonForm const &);
 	PresidentialPardonForm & operator=(PresidentialPardonForm const & );
 	~PresidentialPardonForm( void );
-	void execute(Bureaucrat const & executor) const;
+	bool execute(Bureaucrat const & executor) const;
 };
 
 #endif

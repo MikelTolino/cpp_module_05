@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:26:08 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 19:13:20 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:31:34 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,11 @@ int main(int argc, char const *argv[])
 
 	std::cout << std::endl;
 
-
-	//FIXME: PETA por culpa de puntero NULL
-	rrf = someRandomIntern.makeForm("UnknowForm", "Elias");
-	b1.signForm(*rrf);
-	b1.executeForm(*rrf);
-	delete rrf;
-
+	if ((rrf = someRandomIntern.makeForm("UnknowForm", "Elias")) != nullptr)
+	{
+		b1.signForm(*rrf);
+		b1.executeForm(*rrf);
+		delete rrf;
+	}
 	return 0;
 }

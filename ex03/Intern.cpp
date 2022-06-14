@@ -6,7 +6,7 @@
 /*   By: mmateo-t <mmateo-t@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 15:51:14 by mmateo-t          #+#    #+#             */
-/*   Updated: 2022/06/09 19:00:22 by mmateo-t         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:24:56 by mmateo-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Form *Intern::makeForm(std::string const form, std::string const target)
 			if (f[i]->getName() == form)
 				n = i;
 		}
-		if (n < 0)
+		if (n < 0 || form.empty())
 			throw Intern::ErrorFormUnknown();
 		else
 			std::cout << "Intern creates " << f[n]->getName() << std::endl;
@@ -50,6 +50,7 @@ Form *Intern::makeForm(std::string const form, std::string const target)
 	catch (const Intern::ErrorFormUnknown &e)
 	{
 		std::cout << e.what() << '\n';
+		return nullptr;
 	}
 	return (f[n]);
 }
